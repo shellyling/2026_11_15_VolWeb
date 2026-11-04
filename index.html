@@ -419,18 +419,20 @@ footer{border-top:3px solid var(--rule);background:var(--orange);color:#22170F;f
   .vs-pair .tp{font-size:11px;padding:1px 3px}
   .timeline .vs-pair .tp{font-size:11px}
 }
-  /* 裁判輪值表：固定欄寬改為彈性，長隊名換行 */
-#dutyTable .vs-pair{--tpw:auto;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+/* 裁判輪值表：固定欄寬，以最長隊名為準 */
+#dutyTable .vs-pair{--tpw:9.5em;grid-template-columns:var(--tpw) auto var(--tpw)}
 #dutyTable .vs-pair .tp{
-  white-space:normal!important;
-  overflow:visible!important;
-  text-overflow:clip!important;
+  width:100%;
+  white-space:nowrap;
+  overflow:visible;
+  text-overflow:clip;
   font-size:12px!important;
-  word-break:break-word;
-  width:auto;
+  padding:2px 4px;
+  text-align:center;
 }
-#dutyTable td.mt{min-width:200px}
+#dutyTable td.mt{min-width:0}
 @media (max-width:420px){
+  #dutyTable .vs-pair{--tpw:8.5em}
   #dutyTable .vs-pair .tp{font-size:11px!important;padding:1px 3px}
 }
 </style>
